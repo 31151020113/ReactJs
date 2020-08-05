@@ -14,6 +14,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import NavItemForDesktop from "../nav-item-for-desktop/nav-item-for-desktop";
 import SideBar from "../sidebar/sidebar";
+import NavRight from "../nav-right-for-desktop/nav-right-for-desktop";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MailIcon from "@material-ui/icons/Mail";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import Badge from "@material-ui/core/Badge";
 
 const drawerWidth = "100%";
 
@@ -38,8 +43,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    background: "#6CEC6C",
-    boxShadow: "none",
+    // background: "#6CEC6C",
+    background:
+      "linear-gradient(90deg, #FFCC00 3.02%, #FFCC00 29.86%, #FFDE59 71.33%, #FFF0B2 96.7%)",
+    // boxShadow: "none",
+    boxShadow: "0px 4px 4px rgba(147, 147, 147, 0.2)",
     color: "#2F2F30",
     position: "fixed",
     top: 0,
@@ -49,6 +57,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       marginLeft: "auto",
       display: "none",
+    },
+    "& .MuiToolbar-root": {
+      display: "flex",
+      justifyContent: "space-between",
     },
     "& svg": {
       width: "1.5em",
@@ -175,6 +187,19 @@ const Layout = ({ children }) => {
             <Typography variant="h6" className={classes.title}>
               {children.props.title}
             </Typography>
+            <div className="d-flex">
+              <IconButton
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={17} color="secondary">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <IconButton aria-label="account of current user" color="inherit">
+                <AccountCircle />
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
 
@@ -202,7 +227,9 @@ const Layout = ({ children }) => {
                         </ul>
                       </div>
                     </div>
-                    <div className="right">Test</div>
+                    <div className="right">
+                      <NavRight />
+                    </div>
                   </div>
                 </div>
               </div>

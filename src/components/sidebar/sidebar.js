@@ -1,7 +1,6 @@
 import React from "react";
 import "./sidebar.scss";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import AssessmentOutlinedIcon from "@material-ui/icons/AssessmentOutlined";
 import PersonIcon from "@material-ui/icons/Person";
 import HeadsetIcon from "@material-ui/icons/Headset";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
@@ -12,7 +11,7 @@ import NavItem from "../nav-item/nav-item";
 const Sidebar = ({ handleDrawerToggle }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggleTest = () => {
+  const handleDrawerToggleBack = () => {
     setMobileOpen(!mobileOpen);
   };
   const navItem = [
@@ -30,7 +29,7 @@ const Sidebar = ({ handleDrawerToggle }) => {
     },
     {
       label: "About",
-      handleClick: () => handleDrawerToggleTest(),
+      handleClick: () => handleDrawerToggleBack(),
       iconClass: <PersonIcon />,
     },
   ];
@@ -41,17 +40,17 @@ const Sidebar = ({ handleDrawerToggle }) => {
         name: "Contact",
         icon: "headset_mic",
         title: "Contact",
-        description: "Contact",
+        description: "Kieu Huynh Nhu Phuong",
         phoneNumber: "613.503.2365",
-        email: "info@aea.com",
+        email: "phuongkieu97.k41@st.ueh.edu.vn",
       },
       {
         name: "Info",
         icon: "verified_user",
-        title: "Info",
-        description: "Info",
+        title: "Information",
+        description: "Kieu Huynh Nhu Phuong",
         phoneNumber: "613.503.2365",
-        email: "info@aea.com",
+        email: "phuongkieu@futurify.vn",
       },
     ];
   };
@@ -78,7 +77,7 @@ const Sidebar = ({ handleDrawerToggle }) => {
       <ButtonDrawer
         title={"Test"}
         mobileOpen={mobileOpen}
-        handleDrawerToggle={handleDrawerToggleTest}
+        handleDrawerToggle={handleDrawerToggleBack}
         content={
           <div className="support">
             <div className="mt-5">
@@ -113,8 +112,8 @@ const Sidebar = ({ handleDrawerToggle }) => {
               ))}
             </div>
 
-            <div className="text-center mt-3">
-              <Link to={"/home"} onClick={handleDrawerToggle}>
+            <div className="text-center mt-3 text-back">
+              <Link to={"/"} onClick={handleDrawerToggleBack}>
                 Back Home
               </Link>
             </div>
