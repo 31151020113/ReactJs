@@ -16,7 +16,6 @@ import NavItemForDesktop from "../nav-item-for-desktop/nav-item-for-desktop";
 import SideBar from "../sidebar/sidebar";
 import NavRight from "../nav-right-for-desktop/nav-right-for-desktop";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import Badge from "@material-ui/core/Badge";
 
